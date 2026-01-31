@@ -1,0 +1,63 @@
+# ==============================
+# Robots.txt for SpineAssociation Website
+# Last Updated: 28 Jan 2026
+# Purpose: Control search engine crawler access
+# ==============================
+
+# ==============================
+# Global User-Agent Rules
+# ==============================
+User-agent: *
+# Block access to sensitive directories
+Disallow: /admin/
+Disallow: /config/
+Disallow: /private/
+Disallow: /backup/
+Disallow: /tmp/
+Disallow: /scripts/
+Disallow: /includes/
+
+# Allow access to public assets
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Block specific file types (optional)
+Disallow: /*.php$
+Disallow: /*.cgi$
+Disallow: /*.pl$
+
+# Crawl-delay to reduce server load (some search engines respect this)
+Crawl-delay: 10
+
+# ==============================
+# Sitemap Reference
+# ==============================
+Sitemap: https://www.spineassociation.com/sitemap.xml
+
+# ==============================
+# Specific Bot Rules
+# ==============================
+# Googlebot
+User-agent: Googlebot
+Disallow: /private/
+Disallow: /tmp/
+Allow: /
+
+# Bingbot
+User-agent: Bingbot
+Disallow: /private/
+Allow: /
+
+# Baiduspider
+User-agent: Baiduspider
+Disallow: /
+
+# ==============================
+# Notes:
+# - 'Disallow: /' blocks the entire site for that bot
+# - 'Allow: /folder/' overrides disallow rules for that folder
+# - Keep your sitemap updated for proper indexing
+# - Use Crawl-delay to prevent server overload
+# ==============================
